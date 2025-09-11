@@ -14,7 +14,7 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 
 const Navbar = () => {
-    const { theme, setTheme } = useTheme()
+    const { setTheme } = useTheme()
     return (
         <nav className="p-4 flex items-center justify-between">
             collapseButton
