@@ -1,7 +1,9 @@
-import { Home, Inbox, Search, Calendar, Settings } from "lucide-react";
+import { Home, Inbox, Search, Calendar, Settings, User, User2, ChevronUp } from "lucide-react";
 import Link from "next/link";
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar"
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator } from "@/components/ui/sidebar"
+import { DropdownMenu, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
+import { DropdownMenuContent } from "@radix-ui/react-dropdown-menu";
 const items = [
     {
         title: "home",
@@ -31,19 +33,22 @@ const items = [
 ]
 const AppSidebar = () => {
     return (
-        <Sidebar>
+        <Sidebar collapsible="icon">
             <SidebarHeader>
-                    <SidebarMenu>
-                        <SidebarMenuItem>
-                            <SidebarMenuButton>
-                                <Link href="/">
-                                    <Image src={"https://github.com/shamirdev.png"} alt={"logo"} width={32} height={32} className={"rounded-full"}/>
-                                    <span>Shamir Dev</span>
-                                </Link>
-                            </SidebarMenuButton>
-                        </SidebarMenuItem>
-                    </SidebarMenu>
+                <SidebarMenu>
+                    <SidebarMenuItem>
+                        <SidebarMenuButton asChild>
+                            <Link href="/">
+                                <Image src={"https://images.unsplash.com/photo-1599686100490-c386c444baf1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} alt={"logo"}
+                                    width={20} height={20} className="rounded-full" />
+                                <span>Shamir Dev</span>
+                            </Link>
+                        </SidebarMenuButton>
+                    </SidebarMenuItem>
+                </SidebarMenu>
             </SidebarHeader>
+
+            <SidebarSeparator  />
 
             <SidebarContent>
                 <SidebarGroup>
@@ -66,7 +71,22 @@ const AppSidebar = () => {
             </SidebarContent>
 
             <SidebarFooter>
-
+                <SidebarMenu>
+                    <SidebarMenuItem>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <SidebarMenuButton>
+                                    <User2 /> John Doe <ChevronUp className="ml-auto" />
+                                </SidebarMenuButton>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                <DropdownMenuItem>Account</DropdownMenuItem>
+                                <DropdownMenuItem>Settings</DropdownMenuItem>
+                                <DropdownMenuItem>Sign out</DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </SidebarMenuItem>
+                </SidebarMenu>
             </SidebarFooter>
         </Sidebar>
     )
