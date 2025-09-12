@@ -1,9 +1,10 @@
-import { Home, Inbox, Search, Calendar, Settings, User, User2, ChevronUp } from "lucide-react";
+import { Home, Inbox, Search, Calendar, Settings, User2, ChevronUp, Plus, Projector, Milk, CircleCheckBig } from "lucide-react";
 import Link from "next/link";
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator } from "@/components/ui/sidebar"
+import { Sidebar, SidebarContent, SidebarFooter, SidebarMenuAction, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator} from "@/components/ui/sidebar"
 import { DropdownMenu, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { MoreHorizontal } from "lucide-react";
 import Image from "next/image";
-import { DropdownMenuContent } from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuContent } from "@/components/ui/dropdown-menu";
 const items = [
     {
         title: "home",
@@ -34,7 +35,7 @@ const items = [
 const AppSidebar = () => {
     return (
         <Sidebar collapsible="icon">
-            <SidebarHeader>
+            <SidebarHeader className="py-4">
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
@@ -48,7 +49,7 @@ const AppSidebar = () => {
                 </SidebarMenu>
             </SidebarHeader>
 
-            <SidebarSeparator  />
+            <SidebarSeparator />
 
             <SidebarContent>
                 <SidebarGroup>
@@ -68,6 +69,59 @@ const AppSidebar = () => {
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
+                <SidebarGroupContent />
+
+                <SidebarGroup>
+                    <SidebarGroupLabel>Projects</SidebarGroupLabel>
+                    <SidebarGroupAction title="Add Project">
+                        <Plus /> <span className="sr-only">Add Project</span>
+                    </SidebarGroupAction>
+                    <SidebarGroupContent>
+                        <SidebarMenu>
+                            <SidebarMenuItem>
+                                <SidebarMenuButton asChild>
+                                    <Link href="/projects">
+                                        <Projector />
+                                        <span>Projects</span>
+                                    </Link>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                                <SidebarMenuButton asChild>
+                                    <Link href="/projects">
+                                        <Milk />
+                                        <span>Ideas</span>
+                                    </Link>
+                                </SidebarMenuButton>
+
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                                <SidebarMenuButton asChild>
+                                    <Link href="#">
+                                        <CircleCheckBig />
+                                        <span>Design Engineering</span>
+                                    </Link>
+                                </SidebarMenuButton>
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger asChild>
+                                        <SidebarMenuAction>
+                                            <MoreHorizontal />
+                                        </SidebarMenuAction>
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent side="right" align="start">
+                                        <DropdownMenuItem>
+                                            <span>Edit Project</span>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem>
+                                            <span>Delete Project</span>
+                                        </DropdownMenuItem>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
+                            </SidebarMenuItem>
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup>
+
             </SidebarContent>
 
             <SidebarFooter>
