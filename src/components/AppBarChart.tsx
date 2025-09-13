@@ -24,9 +24,9 @@ const ChartConfig = {
 const AppBarChart = () => {
 
     return (
-        <div>
+        <div className='h-full w-full'>
             <h1>Total Revenue</h1>
-            <ChartContainer config={ChartConfig} className="min-h-[200px] w-full">
+            <ChartContainer config={ChartConfig} className="h-full w-full">
                 <BarChart accessibilityLayer data={chartData}>
                     <CartesianGrid vertical={false} />
                     <XAxis

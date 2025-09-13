@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, CardContent, CardFooter, CardTitle } from './ui/card';
+import { Badge } from './ui/badge';
 import Image from 'next/image';
 const latestTransaction = [
     {
@@ -90,6 +91,7 @@ const CardList = ({ title }: { title: string }) => {
                         </div>
                         <CardContent className='p-0'>
                             <CardTitle className='text-xs font-medium'>{item.title}</CardTitle>
+                            <Badge variant="default" className='text-xs mt-3'>{item.badge}</Badge>
                         </CardContent>
                         <CardFooter>{item.count / 1000}K</CardFooter>
                     </Card>
