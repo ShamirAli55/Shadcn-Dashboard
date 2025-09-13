@@ -63,15 +63,15 @@ shadcn-dashboard/
 
 
 <p align="center">
-  <img src="/images/img1.png" alt="Dashboard Preview 1" width="800" />
+  <img src="./public/images/img1.png" alt="Dashboard Preview 1" width="800" />
 </p>
 
 <p align="center">
-  <img src="/images/img2.png" alt="Dashboard Preview 2" width="800" />
+  <img src="./public/images/img2.png" alt="Dashboard Preview 2" width="800" />
 </p>
 
 <p align="center">
-  <img src="/images/img3.png" alt="Dashboard Preview 3" width="800" />
+  <img src="./public/images/img3.png" alt="Dashboard Preview 3" width="800" />
 </p>
 
 ---
