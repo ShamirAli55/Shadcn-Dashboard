@@ -61,7 +61,18 @@ shadcn-dashboard/
 
 ## 🖼️ Preview
 
-![Dashboard Preview](https://via.placeholder.com/1200x600.png?text=Shadcn+Dashboard+Preview)
+
+<p align="center">
+  <img src="./public/img1.png" alt="Dashboard Preview 1" width="800" />
+</p>
+
+<p align="center">
+  <img src="./public/img2.png" alt="Dashboard Preview 2" width="800" />
+</p>
+
+<p align="center">
+  <img src="./public/img3.png" alt="Dashboard Preview 3" width="800" />
+</p>
 
 ---
 
