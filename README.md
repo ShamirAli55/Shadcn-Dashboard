@@ -98,10 +98,4 @@ This project is licensed under the **MIT License**.
 
 ---
 
-### 💡 Inspiration
 
-This dashboard template is built for developers who want a **beautiful, minimal, and production-ready UI** out of the box. Customize it, extend it, and build something amazing 🚀
-
-
-Do you want me to make the **README more portfolio-style** (showcasing it like a product you built) or more **developer-ready** (like a template others can fork and use)?
-```
